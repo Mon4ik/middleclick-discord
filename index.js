@@ -12,6 +12,10 @@ function choose(choices, rand) {
     return choices[Math.floor(rand() * choices.length)];
 }
 
+function clamp(n, min, max) {
+    return Math.min(Math.max(n, min), max)
+}
+
 app.get("/:seed.gif", (req, res) => {
     const seed = req.params.seed
     const rand = seedrandom(seed)
